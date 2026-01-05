@@ -13,6 +13,7 @@ import com.main.app.StudentLogin.Signup;
 import com.main.app.StudentLogin.Login;
 import com.main.app.Users.UserManager;
 import com.main.app.Utils.Clear;
+import com.main.app.Utils.Pause;
 import com.main.app.Output;
 import java.util.Scanner;
 import com.main.app.Validations.ValidateChoice;
@@ -29,7 +30,7 @@ public class StudentAuth {
     private static final int titleLength = header.length();
 
     // Creates a border line based on header length
-    private static final String BORDER = "=".repeat(titleLength + 5);
+    private static final String BORDER = "=".repeat(titleLength + 10);
 
     // Utility class for clearing the console screen
     private static final Clear clear = new Clear();
@@ -39,6 +40,7 @@ public class StudentAuth {
 
     // Class that validates numeric menu input
     private static final ValidateChoice input = new ValidateChoice();
+    private static final Pause pause = new Pause();
     
     /*
      * This method is called when the user chooses
@@ -83,7 +85,7 @@ public class StudentAuth {
         System.out.println("==== STUDENT LOGIN ====");
         System.out.println(" [1] Login");
         System.out.println(" [2] Signup");
-        System.out.println(" [3] Back");
+        System.out.println(" [3] Back to Main Menu");
         System.out.println(" [4] Exit");
         System.out.println(BORDER);
         
@@ -107,6 +109,8 @@ public class StudentAuth {
 
             // Go back to main menu
             case 3 -> {
+                System.out.println("Returning to Main Menu...");
+                pause.screen();
                 clear.screen();
                 output.display();
             }
@@ -118,9 +122,6 @@ public class StudentAuth {
                     System.exit(0);
                 }
             }
-
-            // Optional: handle invalid choices
-            default -> System.out.println("Invalid choice. Please try again.");
         }
     }
 
