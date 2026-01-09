@@ -18,8 +18,8 @@ public class StudentGrade extends Student {
      * @param midterm    Midterm grade
      * @param finalGrade Final grade
      */
-    public StudentGrade(String name, int id, int midterm, int finalGrade) {
-        super(name, id); // initialize parent Student class
+    public StudentGrade(String studentName,String firstName,String lastName, int id, int midterm, int finalGrade) {
+        super(firstName,lastName,id); // initialize parent Student class
         this.midtermGrade = midterm;
         this.finalGrade = finalGrade;
     }

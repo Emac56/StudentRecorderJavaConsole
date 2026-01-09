@@ -4,7 +4,6 @@ import com.main.app.Users.UserManager;
 import com.main.app.Users.User;
 import com.main.app.Utils.Clear;
 import com.main.app.Utils.Pause;
-
 import java.util.Scanner;
 
 /**
@@ -21,14 +20,12 @@ public class Login {
      * @param userManager UserManager instance to check user credentials
      */
     public static void loginStudent(UserManager userManager) {
-        CLEAR.screen();
 
         // Prompt for username and password
         String username = prompt("Enter username: ");
         String password = prompt("Enter password: ");
 
         User user = userManager.getByUsername(username);
-
         if (user == null) {
             System.out.println("\nYou don't have an account. Please sign up first.");
             Pause.screen();

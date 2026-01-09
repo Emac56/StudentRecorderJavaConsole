@@ -18,14 +18,16 @@ public void add() {
     Pause pause = new Pause();  
     ValidateChoice choice = new ValidateChoice();  
 
-    System.out.print("Enter Student Name: ");  
-    String studentName = scanner.nextLine();  
+    System.out.print("Enter Student Firstname Name: ");  
+    String firstName = scanner.nextLine();
+    System.out.print("Enter Student Lastname Name: ");  
+    String lastName = scanner.nextLine();  
     int studentId = choice.validateChoice("Enter Student Id: ");  
 
-    Student newStudent = new Student(studentName, studentId);  
+    Student newStudent = new Student(firstName,lastName,studentId);  
 
     if (studentManager.addStudent(newStudent)) {  
-        System.out.println("Successfully added: " + studentName);  
+        System.out.println("Successfully added: " + firstName + " " + lastName);  
     } else {  
         System.out.println("Student already exists");  
     }  

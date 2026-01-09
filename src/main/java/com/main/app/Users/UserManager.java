@@ -3,7 +3,6 @@ package com.main.app.Users;
 import com.main.app.AdminLogin.Admin;
 import java.util.ArrayList;
 import java.util.List;
-
 public class UserManager {
 
     // List to store all users
